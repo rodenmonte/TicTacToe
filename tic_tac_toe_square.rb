@@ -1,33 +1,27 @@
+require_relative 'invalid_move_error.rb'
+
 class TicTacToeSquare
   EMPTY_SQUARE = ""
-  X = "X"
-  O = "O"
 
-  attr_reader :letter
+  attr_reader :letter, :id
 
-  def initialize()
-    @letter = EMPTY_SQUARE
+  def initialize(square_id = 0, letter = EMPTY_SQUARE)
+    @id = square_id
+    @letter = letter
   end
 
   def empty?
     @letter == EMPTY_SQUARE
   end
 
-  def set_contents(letter)
-    raise "Square already set" unless empty?
+  def set_letter(letter)
+    raise InvalidMoveError.new "Square already set" unless empty?
 
-    letter = letter
-  end
-
-  def set_x
-    set_contents("X")
-  end
-
-  def set_o
-    set_contents("O")
+    @letter = letter
   end
 
   def to_s
+    return id.to_s if letter == EMPTY_SQUARE
     letter
   end
 
@@ -35,3 +29,4 @@ class TicTacToeSquare
     letter == other.letter
   end
 end
+
