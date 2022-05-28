@@ -45,7 +45,7 @@ class TicTacToeCliPlayer < AbstractTicTacToePlayer
     when 1, 2
       HumanClient.new('X')
     when 3
-      AiClient.new('X')
+      RandomAiClient.new('X')
     end
   end
 
@@ -54,7 +54,7 @@ class TicTacToeCliPlayer < AbstractTicTacToePlayer
     when 2
       HumanClient.new('O')
     when 1, 3
-      AiClient.new('O')
+      RandomAiClient.new('O')
     end
   end
 end

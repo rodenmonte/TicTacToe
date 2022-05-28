@@ -1,6 +1,6 @@
 require_relative './abstract_client'
 
-class AiClient < AbstractClient
+class RandomAiClient < AbstractClient
   def get_square_id(board)
     board.valid_moves.sample
   end

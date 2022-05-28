@@ -1,6 +1,6 @@
 require_relative './tic_tac_toe.rb'
 require_relative './human_client.rb'
-require_relative './ai_client.rb'
+require_relative './random_ai_client.rb'
 
 class AbstractTicTacToePlayer
   def play_game(choice)
