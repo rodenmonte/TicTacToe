@@ -38,12 +38,11 @@ class TicTacToe
   end
 
   def game_over?
-    return true if winner_or_nil || no_legal_moves?
+    winner_or_nil || no_legal_moves?
   end
 
   def no_legal_moves?
-    return true if board.flatten.count(&:empty?) == 0
-    false
+    valid_moves.empty?
   end
 
   # Returns the letter of the winner, or nil if none.
@@ -74,10 +73,7 @@ class TicTacToe
         end
       end
     end
-    res = check_row_for_winner_or_nil(left_diag) || check_row_for_winner_or_nil(right_diag)
-    return res if res
-
-    nil
+    check_row_for_winner_or_nil(left_diag) || check_row_for_winner_or_nil(right_diag)
   end
 
   def check_row_for_winner_or_nil(row)
