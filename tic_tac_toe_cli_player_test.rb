@@ -1,3 +1,4 @@
+require 'stringio'
 require_relative './tester.rb'
 require_relative './tic_tac_toe_cli_player.rb'
 
